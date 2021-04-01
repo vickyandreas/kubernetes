@@ -1,0 +1,15 @@
+# ./docker-compose.yml
+
+version: '3'
+
+services:
+  web:
+    build: . 
+    image: my_apps:1.0
+    container_name: my_apps
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "8108:80"
+    stdin_open: true
+    tty: true
